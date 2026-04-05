@@ -5,7 +5,7 @@ Lab 1 : Git, Python et Structure Projet
 import pandas as pd
 
 # ===== CHARGER LES DONNEES =====
-df = pd.read_csv("data/patients_dakar.csv", encoding="latin-1")
+df = pd.read_csv("data/patients_dakar.csv")
 
 # ===== PREMIERS APERCUS =====
 print("=" * 50)
@@ -48,3 +48,8 @@ print(f"\n{'=' * 50}")
 print("Exploration terminee !")
 print("Prochain lab : entrainer un modele ML")
 print(f"{'=' * 50}")
+
+# ===== REPARTITION PAR SEXE ET DIAGNOSTIC =====
+print(f"\n--- Patients par sexe et diagnostic ---")
+groupe = df.groupby(["sexe", "diagnostic"]).size()
+print(groupe)
